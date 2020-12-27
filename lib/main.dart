@@ -1,113 +1,140 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp()); //run the application
+}
+
+class NoAgendaSound {
+  final String name;
+  final String filename;
+  NoAgendaSound(this.name, this.filename);
+  static List<NoAgendaSound> fetchAll() {
+    return [
+      NoAgendaSound('Ahhh... Thanks Obama', 'AhhhThanksObama.mp3'),
+      NoAgendaSound("Amen... First Bump", "AmenFistBump.mp3"),
+      NoAgendaSound('AnarchyGoatKarma', 'AnarchyAnarchyAnarchyGoatKarma.mp3'),
+      NoAgendaSound('Biden Whole Load', 'BidenWholeLoad.mp3'),
+      NoAgendaSound('Big Swinging Johnson', 'BigSwingingJohnson.mp3'),
+      NoAgendaSound("Boom Shaka Laka", "BoomShakalakaGirl.mp3"),
+      NoAgendaSound('Bullshit', 'Bullshit.mp3'),
+      NoAgendaSound("Can You See That Juice", "CanYouSeeThatJuice.mp3"),
+      NoAgendaSound('China Is Assho', 'ChinaIsAssho.mp3'),
+      NoAgendaSound('Coincidence', 'Coincidence.mp3'),
+      NoAgendaSound('Ding', 'Ding.mp3'),
+      NoAgendaSound('Dont Be A Denier', 'DontBeADenier.mp3'),
+      NoAgendaSound('Don\'t Eat Me Hillary Clinton.mp3',
+          'Don\'t Eat Me Hillary Clinton.mp3'),
+      NoAgendaSound('Donald Loves Nazis', 'DonaldLovesNazis.mp3'),
+      NoAgendaSound('Dont Look Over Here', 'DontLookOverHere.mp3'),
+      NoAgendaSound('Douchebag', 'Douchebag.mp3'),
+      NoAgendaSound("dvorak.org/na", "dvorak-dot-org-slash-na-8bit.mp3"),
+      NoAgendaSound('Dvorak Scam', 'DvorakScam.mp3'),
+      NoAgendaSound(
+          'Everyone Hug And Share A Secret', 'EveryoneHugAndShareASecret.mp3'),
+      NoAgendaSound('Fact Check False', 'FactCheckFalse.mp3'),
+      NoAgendaSound('Fear Is Freedom', 'FearIsFreedom.mp3'),
+      NoAgendaSound('Fletcher UBER!', 'Fletcher_UBER.mp3'),
+      NoAgendaSound('Good Try Scumbag Sweep', 'GoodTryScumbagSweep.mp3'),
+      NoAgendaSound('Glitch', 'GlitchGlitchGlitch.mp3'),
+      NoAgendaSound('Hey Citizen', 'Hey Citizen.mp3'),
+      NoAgendaSound("Hot Pockets", "Hot Pockets.mp3"),
+      NoAgendaSound('Its MF Science Time', 'ItsMFScienceTime.mp3'),
+      NoAgendaSound("In The Morning", "In The Morning.mp3"),
+      NoAgendaSound('Ive Got Information', 'IveGotInformation.mp3'),
+      NoAgendaSound('I Love Bugs', 'ILoveBugs.mp3'),
+      NoAgendaSound('JCD Pet Peeve', 'JCDPetPeeve.mp3'),
+      NoAgendaSound('Jobs', 'Jobs.mp3'),
+      NoAgendaSound('Less Than 10 Minutes', 'LessThan10Mins.mp3'),
+      NoAgendaSound('Look at that Juice', 'LookAtThatJuice.mp3'),
+      NoAgendaSound('Mac N Cheese', 'MacNCheeseJingle.mp3'),
+      NoAgendaSound(
+          'Magincal Shape Shifting Jews', 'MagicalShapeShiftingJews.mp3'),
+      NoAgendaSound('Manning Money Shot (Short)', 'ManningMoneyShot.mp3'),
+      NoAgendaSound('Manning Money Shot (Long)', 'ManningMoneyShotLong.mp3'),
+      NoAgendaSound('My Millennials Stay Woke', 'MyMillennialsStayWoke.mp3'),
+      NoAgendaSound('Nein Nein Nein', 'NeinNeinNein.mp3'),
+      NoAgendaSound('Obama Phone', 'ObamaPhone.mp3'),
+      NoAgendaSound("OMG That's Amazing", "OMGAmazing.mp3"),
+      NoAgendaSound('Pretty Good', 'PrettyGood.mp3'),
+      NoAgendaSound('Putin!', 'Putin.mp3'),
+      NoAgendaSound('Putin on the Ritz', 'PutinOnTheRitz.mp3'),
+      NoAgendaSound('Raven Receda', 'Raven_Receda.mp3'),
+      NoAgendaSound('Resist We Much', 'ResistWeMuch.mp3'),
+      NoAgendaSound(
+          'See Something Say Something', 'See Something Say Something.mp3'),
+      NoAgendaSound('Serice Goat Karam', 'ServiceGoatKarma.mp3'),
+      NoAgendaSound(
+          "Shut Up Already It's Science", "Shut Up Already It's Science.mp3"),
+      NoAgendaSound('Shut up Slave', 'Shut Up Slave Lizzy.mp3'),
+      NoAgendaSound(
+          'Somebodys Getting Cornholed', 'SomebodysGettingCornholed.mp3'),
+      NoAgendaSound('Squirrel', 'Squirrel.mp3'),
+      NoAgendaSound('Stay Woke', 'StayWoke.mp3'),
+      NoAgendaSound('Step the Hammering', 'StopTheHammering.mp3'),
+      NoAgendaSound('Thank you for Your Courage', 'ThankYouForYourCourage.mp3'),
+      NoAgendaSound('That\'s True', 'ThatsTrue.mp3'),
+      NoAgendaSound('Team America', 'TheAmericaTeam.mp3'),
+      NoAgendaSound('Theremin', 'Theremin.mp3'),
+      NoAgendaSound('Too Delicious to Believe', 'Too-Delicious.mp3'),
+      NoAgendaSound('Two to the Head', '2tth.mp3'),
+      NoAgendaSound('Weeeeeee', 'Weeeee.mp3'),
+      NoAgendaSound('We\'re All Gonna Die', 'WereAllGonnaDie.mp3'),
+      NoAgendaSound('We Told You So!', 'WeToldYouSoOnNoAgenda.mp3'),
+      NoAgendaSound('We Won\'t Be Trumped', 'WeWontBeTrumped.mp3'),
+      NoAgendaSound('What Have You Done', 'WhatHaveYouDone.mp3'),
+      NoAgendaSound(
+          'Whoop Em With The Constitution', 'WhoopEmWithTheConstitution.mp3'),
+      NoAgendaSound('Wow I\'m Really High', 'WowIAmReallyHigh.mp3'),
+      NoAgendaSound('Yay', 'Yay.mp3'),
+      NoAgendaSound('You\'ve Got Karma', 'Youve Got Karma.mp3')
+    ];
+  }
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'No Agenda Sound Board',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    AudioCache audioCache = new AudioCache();
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text('No Agenda Sound Board'),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: ListView.builder(
+          itemCount: NoAgendaSound.fetchAll().length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(NoAgendaSound.fetchAll()[index].name),
+              trailing: IconButton(
+                icon: Icon(
+                  Icons.favorite_border,
+                  size: 20.0,
+                  color: Colors.brown[900],
+                ),
+                onPressed: () {
+                  print("favorite pressed");
+                },
+              ),
+              onTap: () {
+                //Go to the next screen with Navigator.push
+                print('sound pressed');
+                audioCache.play(NoAgendaSound.fetchAll()[index].filename);
+              },
+            );
+          },
+        ));
   }
 }
